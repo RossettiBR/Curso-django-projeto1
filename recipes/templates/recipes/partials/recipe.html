@@ -25,6 +25,7 @@
                 {% endif %}
             </span>
         {% endif %}
+
         <span class="recipe-author-item">
             <i class="fas fa-calendar-alt"></i>
             {{ recipe.created_at|date:"d/m/Y"}} às {{ recipe.created_at|date:"H:i:s"}}
@@ -49,7 +50,7 @@
         <div class="recipe-meta recipe-preparation">
             <h3 class="recipe-meta-title"><i class="fas fa-stopwatch"></i> Preparo</h3>
             <div class="recipe-meta-text">
-                {{ recipe.preparation_time}} {{ recipe.preparation_time_unit }}
+                {{ recipe.preparation_time }} {{ recipe.preparation_time_unit }}
             </div>
         </div>
         <div class="recipe-meta recipe-servings">
@@ -69,9 +70,13 @@
         </footer>
     {% endif %}
 
-   {% if is_detail_page %}
-    <div class="preparation-steps">
-        {{ recipe.preparation_steps|linebreaksbr }}
-    </div>
-   {% endif %}
+   {% if is_detail_page is True %}
+        <div class="preparation-steps">
+            {% if recipe.preparation_step_is_html is True %}
+                {{ recipe.preparation_step|safe }}
+            {% else %}
+                {{ recipe.preparation_step|linebreaksbr }}
+            {% endif %}
+        </div>
+    {% endif %}
 </div>
