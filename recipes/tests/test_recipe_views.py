@@ -31,7 +31,33 @@ class RecipeViewsTest(TestCase):
 
     def test_recipe_home_template_loads_recipes(self):
         category = Category.objects.create(name='Category')
-        assert 1 == 1
+        author = User.objects.create_user(
+            first_name='user',
+            last_name='name',
+            username='username',
+            password='123456',
+            email='username@email.com'
+        )
+        recipe = Recipe.objects.create(
+            category=category,
+            author=author,
+            title='Recipe Title',
+            description='Recipe Description',
+            slug='recipe-slug',
+            preparation_time='10',
+            preparation_time_unit='Minutos',
+            servings=5,
+            servings_unit='Porções',
+            preparation_step='Recipe Preparation Steps',
+            preparation_step_is_html=False,
+            is_published=True,
+        )
+
+        response = self.client.get(reverse('recipes:home'))
+        response_recipes = response.context['recipes']
+
+        self.assertEqual(response_recipes.first().title, 'Recipe Title')
+        pass
 
     def test_recipe_category_views_function_is_correct(self):
         view = resolve(reverse('recipes:category', kwargs={'category_id': 1}))
