@@ -1,9 +1,9 @@
-from django.test import TestCase
 from django.urls import reverse, resolve
 from recipes import views
+from . test_recipe_base import RecipeTestBase
 
 
-class RecipeSearchViewTest(TestCase):
+class RecipeSearchViewTest(RecipeTestBase):
 
     def test_recipe_search_uses_correct_view_function(self):
         url = reverse('recipes:search')
@@ -55,4 +55,4 @@ class RecipeSearchViewTest(TestCase):
         self.assertNotIn(recipe1, response2.context['recipes'])
 
         self.assertIn(recipe1, response_both.context['recipes'])
-        self.assertin(recipe2, response_both.context['recipes'])
+        self.assertIn(recipe2, response_both.context['recipes'])
