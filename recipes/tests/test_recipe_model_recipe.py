@@ -2,5 +2,7 @@ from.test_recipe_base import RecipeTestBase
 
 
 class RecipeModelTest(RecipeTestBase):
-    pass
+    def setUp(self) -> None:
+        self.recipe = self.make_recipe()
+        return super().setUp()
 
