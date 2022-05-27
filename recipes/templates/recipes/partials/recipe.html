@@ -2,17 +2,17 @@
     {% if recipe.cover %}
         <div class="recipe-cover">
             <a href="{% url 'recipes:recipe' recipe.id %}">
-                <img src="{{ recipe.cover.url }}" alt="temporario">
+                <img src="{{ recipe.cover.url }}" alt="temp">
             </a>
         </div>
     {% endif %}
-    <div class="recipe-title-container">
-        <h2 class="recipe-title">
-            <a href="{% url 'recipes:recipe' recipe.id %}">
-                {{ recipe.title }}
-            </a>
-        </h2>
-    </div>
+        <div class="recipe-title-container">
+            <h2 class="recipe-title">
+                <a href="{% url 'recipes:recipe' recipe.id %}">
+                    {{ recipe.title }}
+                </a>
+            </h2>
+        </div>
 
     <div class="recipe-author">
         {% if recipe.author is not None %}
@@ -42,6 +42,7 @@
 
 
     </div>
+
     <div class="recipe-content">
         <p>{{ recipe.description }}</p>
     </div>
@@ -70,7 +71,7 @@
         </footer>
     {% endif %}
 
-   {% if is_detail_page is True %}
+    {% if is_detail_page is True %}
         <div class="preparation-steps">
             {% if recipe.preparation_step_is_html is True %}
                 {{ recipe.preparation_step|safe }}

@@ -2,6 +2,7 @@ from django.db.models import Q
 from django.http import Http404
 from django.shortcuts import render, get_list_or_404, get_object_or_404
 from django.core.paginator import Paginator
+
 from utils.pagination import make_pagination_range
 from recipes.models import Recipe
 
@@ -15,7 +16,7 @@ def home(request):
         current_page = int(request.GET.get('page', 1))
     except ValueError:
         current_page = 1
-        
+ 
     paginator = Paginator(recipes, 9)
     page_obj = paginator.get_page(current_page)
 
