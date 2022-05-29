@@ -1,3 +1,4 @@
+from attr import attr
 from django import forms
 from django.contrib.auth.models import User
 
@@ -12,3 +13,31 @@ class RegisterForm(forms.ModelForm):
             'email',
             'password',
         ]
+
+        labels = {
+            'first_name': 'First name',
+            'last_name': 'Last name',
+            'username': 'Username',
+            'email': 'E-mail',
+            'password': 'Password',
+        }
+
+        help_texts = {
+            'email': 'The e-mail must be valid.'
+        }
+
+        error_messages = {
+            'username': {
+                'required': 'This field must not be empty',
+            }
+        }
+
+        widgets = {
+            'first_name': forms.TextInput(attrs={
+                'placeholder': 'Type first name here',
+                'class': 'input text-input',
+            }),
+            'password': forms.PasswordInput(attrs={
+                'placeholder': 'Type your password herer',
+            })
+        }
