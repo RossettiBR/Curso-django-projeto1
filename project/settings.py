@@ -108,7 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'pt-BR'
+LANGUAGE_CODE = 'pt-br'
 
 TIME_ZONE = 'America/Sao_Paulo'
 
@@ -133,9 +133,9 @@ MEDIA_ROOT = BASE_DIR / 'media'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MESSAGE_TAGS = {
-    constants.DEBUG: 'messege-debug',
-    constants.ERROR: 'messege-error',
-    constants.INFO: 'messege-info',
-    constants.SUCCESS: 'messege-success',
-    constants.WARNING: 'messege-warning',
+    constants.DEBUG: 'message-debug',
+    constants.ERROR: 'message-error',
+    constants.INFO: 'message-info',
+    constants.SUCCESS: 'message-success',
+    constants.WARNING: 'message-warning',
 }
