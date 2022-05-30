@@ -1,9 +1,25 @@
-from attr import attr
 from django import forms
 from django.contrib.auth.models import User
 
 
 class RegisterForm(forms.ModelForm):
+    password = forms.CharField(
+        required=True,
+        widget=forms.PasswordInput(attrs={
+            'placeholder': 'Your password'
+        })
+
+        error_messages={
+            'required': 'Password must not be emoty'
+        }
+    )
+    password2 = forms.CharField(
+        required=True,
+        widget=forms.PasswordInput(attrs={
+            'placeholder': 'Repeat your password'
+        })
+    )
+
     class Meta:
         model = User
         fields = [
