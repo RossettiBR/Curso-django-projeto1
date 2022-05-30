@@ -1,3 +1,5 @@
+import re
+
 from django import forms
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
@@ -12,13 +14,25 @@ def add_placeholder(field, placeholder_val):
     add_attr(field, 'placeholder', placeholder_val)
 
 
+def strong_password(password):
+    regex = re.compile(r'^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}$')
+
+    if not regex.match(password):
+        raise ValidationError(('Password must have at least one uppercase letter, '   # noqa:E501
+                               'one lowercase letter and one number. The length shold be '  # noqa:E501
+                               'at least 8 characters.'
+                               ),
+                              code='Invalid'
+                              )
+
+
 class RegisterForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         add_placeholder(self.fields['username'], 'Your username')
         add_placeholder(self.fields['email'], 'Your e-mail')
-        add_placeholder(self.fields['first_name'], 'Your first name')
-        add_placeholder(self.fields['last_name'], 'Your last name')
+        add_placeholder(self.fields['first_name'], 'Ex.: John')
+        add_placeholder(self.fields['last_name'], 'Ex.: Doe')
 
     password = forms.CharField(
         required=True,
@@ -30,11 +44,7 @@ class RegisterForm(forms.ModelForm):
             'required': 'Password must not be emoty'
         },
 
-        help_text=(
-            'Password must have at least one uppercase letter,'
-            'one lowercase letter and one number. The length shold be '
-            'at least 8 characters.'
-        )
+        validators=[strong_password]
 
     )
     password2 = forms.CharField(
