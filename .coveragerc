@@ -1,3 +1,4 @@
+
 [run]
 branch = True
-omit = venv/*, **/*test*.py, manage.pycovere, __localcode/*, project/*
+omit = venv/*, **/*test*.py, manage.pycovere, __localcode/*, project/*, *manage.py
