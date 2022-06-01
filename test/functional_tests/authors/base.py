@@ -4,7 +4,6 @@ from selenium.webdriver.common.by import By
 from utils.browser import make_chrome_browser
 
 
-
 class AuthorBaseTest(StaticLiveServerTestCase):
     def setUp(self) -> None:
         self.browser = make_chrome_browser()
