@@ -68,6 +68,7 @@ class RecipeMixin:
             }
             recipe = self.make_recipe(**kwargs)
             recipes.append(recipe)
+            
         return recipes
 
 
