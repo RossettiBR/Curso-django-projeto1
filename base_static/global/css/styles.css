@@ -66,6 +66,7 @@ h4,
 h5,
 h6 {
     font-family: var(--font-headings);
+    margin-bottom: 2rem;
 }
 
 img {
@@ -488,6 +489,21 @@ a {
 
 
 /* Generics */
+
+.button-new-recipe {
+    font-size: 1.6rem;
+    color: var(--color-white);
+    background: var(--color-primary-dark);
+    border-radius: 0.5rem;
+    border: none;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.button-new-recipe a {
+    color: var(--color-white);
+}
+
 .center {
     text-align: center;
 }

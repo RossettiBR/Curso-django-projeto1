@@ -9,6 +9,10 @@
         {% include 'global/partials/messages.html' %}
         {% include 'authors/partials/login_message.html' %}
 
+        <div class="main-content">
+            <button class="button-new-recipe"><a href="{% url 'authors:new_recipe' %}">New Recipe</a></button>
+        </div>
+
         <div class="left">
             {% include 'global/partials/form.html' %}
         </div>
