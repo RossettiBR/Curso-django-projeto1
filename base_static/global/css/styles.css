@@ -68,12 +68,19 @@ h6 {
     font-family: var(--font-headings);
 }
 
+img {
+    max-width: 100%;
+}
 
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
 
 .container {
     max-width: 144rem;
     margin: 0 auto;
-    padding: var(--spacing-gutter-large);
+    padding: var(--spacing-gutter-medium);
 }
 
 
@@ -450,7 +457,7 @@ h6 {
 
 .login-message {
     margin-top: 1rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 }
 
 .message-content {
