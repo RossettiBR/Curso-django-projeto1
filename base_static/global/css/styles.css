@@ -440,6 +440,17 @@ h6 {
     margin-bottom: 2rem;
 }
 
+/* Authors */
+
+.login-message {
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+}
+
+.message-content {
+    margin-bottom: 3rem;
+}
+
 /* Generics */
 .center {
     text-align: center;
