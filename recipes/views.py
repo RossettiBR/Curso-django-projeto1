@@ -1,5 +1,4 @@
 import os
-from pickle import FALSE
 
 from django.db.models import Q
 from django.http import JsonResponse
