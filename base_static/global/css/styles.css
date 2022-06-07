@@ -544,8 +544,26 @@ a {
     position: absolute;
     top: 1rem;
     right: 1rem;
+    color: var(--color-white);
+    background: none;
+    border: none;
+    font-size: 2rem;
+    z-index: 3;
+    cursor: pointer;
 }
 
+.menu-nav {
+    display: flex;
+    flex-flow: column wrap;
+    font-family: var(--font-headings);
+    font-size: 2rem;
+}
+
+.menu-nav a{
+    width: 100%;
+    padding: 1rem;
+
+}
 @media (max-width: 60rem) {
     .main-content-list,
     .form-content-grid {
