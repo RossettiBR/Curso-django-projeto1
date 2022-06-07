@@ -1,6 +1,5 @@
 import string
 from random import SystemRandom
-from wsgiref import simple_server
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
 from django.db import models
@@ -31,6 +30,6 @@ class Tag(models.Model):
             )
             self.slug = slugify(f'{self.name}-{rand_letters}')
         return super().save(*args, **kwargs)
-    
+
     def __str__(self):
         return self.name
