@@ -524,6 +524,28 @@ a {
     display: none;
 }
 
+.menu-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 26rem;
+    min-height: 100vh;
+    overflow-y: auto;
+    background: var(--color-primary);
+    z-index: 2;
+}
+
+.menu-container a{
+    color: var(--color-white);
+}
+
+.button-close-menu {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
 @media (max-width: 60rem) {
     .main-content-list,
     .form-content-grid {
