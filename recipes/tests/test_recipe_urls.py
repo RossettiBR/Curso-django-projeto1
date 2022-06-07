@@ -1,4 +1,3 @@
-from audioop import reverse
 from django.test import TestCase
 from django.urls import reverse
 
@@ -15,7 +14,7 @@ class RecipeURLsTest(TestCase):
 
     def test_recipes_detail_url_is_correct(self):
         url = reverse('recipes:recipe', kwargs={'pk': 1})
-        self.assertEqual(url, '/recipes/1/')
+        self.assertEqual(url, '/recipe/1/')
 
     def test_recipe_search_url_is_correct(self):
         url = reverse('recipes:search')
