@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os
 from pathlib import Path
-from utils.enviroment import get_env_variable, parse_comma_sep_str_to_list
+from utils.environment import get_env_variable, parse_comma_sep_str_to_list
 from django.contrib.messages import constants
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
