@@ -534,10 +534,39 @@ a {
     overflow-y: auto;
     background: var(--color-primary);
     z-index: 2;
+    transition: all 300ms ease-in-out;
 }
 
 .menu-container a{
     color: var(--color-white);
+}
+
+.menu-hidden {
+    left: -25.5rem;
+
+}
+
+.button-show-menu {
+    position: fixed;
+    left: 26.5rem;
+    top: 2rem;
+    color: var(--color-white);
+    background: var(--color-primary);
+    border: none;
+    font-size: 2rem;
+    z-index: 3;
+    padding: 1rem;
+    visibility: visible;
+    opacity: 1;
+    transition: all 300ms ease-in-out;
+    border-radius: 0 .4rem .4rem 0;
+    cursor: pointer;
+}
+
+.button-show-menu-visible {
+    visibility: visible;
+    opacity: 1;
+    left: 0.5rem;
 }
 
 .button-close-menu {
