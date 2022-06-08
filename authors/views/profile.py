@@ -12,7 +12,7 @@ class ProfileView(TemplateView):
         profile = get_list_or_404(Profile.objects.filter(
             pk=profile_id
         ).select_related('author'), pk=profile_id)
-        
+
         return self.render_to_response({
             **context,
             'profile': profile,

@@ -6,6 +6,6 @@ class AuthorsConfig(AppConfig):
     name = 'authors'
 
     def ready(self, *args, **kwargs) -> None:
-        import authors.signals # noqa
+        import authors.signals  # noqa
         super_ready = super().ready(*args, **kwargs)
         return super_ready
