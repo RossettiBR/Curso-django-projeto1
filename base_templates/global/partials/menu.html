@@ -18,6 +18,7 @@
                 <a href="{% url 'authors:new_recipe' %}">New recipe</a>
                 <a href="{% url 'authors:dashboard' %}">Dashboard</a>
                 <a class="authors-logout-link" href="{% url 'authors:logout' %}">Logout</a>
+                {% include 'authors/partials/form_logout.html' %}
             {% else %}
                 <a href="{% url 'authors:login' %}">Login</a>
                 <a href="{% url 'authors:register' %}">Register</a>
